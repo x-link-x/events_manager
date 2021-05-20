@@ -5,47 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Manager</title>
-    <style></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav>
+    <header>
+        <nav id="navbar">
+            <h1>Events Manager</h1>
+            <ul>
+                <li><a href="/events">Home</a></li>
+                <li><a href="/events/delete">Delete an event</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main-page">
+
+        {% block content %}  
+        {% endblock content %}
+
         <ul>
-            <li><a href="/events">Home</a></li>
-            <li><a href="/events/delete">Delete an event</a></li>
-        </ul>
-    </nav>
-
-    {% block content %}  
-    {% endblock content %}
-
-    <ul>
-        {% for event in my_events %} 
-            <li>
-                {{ event.date }}
-                {{ event.name }} 
-                {{ event.num_of_guests }}
-                {{ event.room }}
-                {{ event.description }}
-                <!-- {% if event.recurring%}
-                    <span>This is a recurring event</span>
-                {% else %}
-                    <span>This is not recurring</span> -->
-
-                {% endif %}
-                
-                
-                    
-                
-                    
-                
-
-                <!-- {% if event.recurring %}
-                    <span>&#9989;</span>
-                    do something - display checkbox ticked (returns on)
-                {% endif %} --> 
-            </li>
-        {% endfor %}
-    </ul>   
-    
+            {% for event in my_events %} 
+                <li class="event-box">
+                    <p>{{ event.start_date }}</p>
+                    <h3>{{ event.name }}</h3>
+                    <p>Number attending: {{ event.num_of_guests }}</p>
+                    <p>Location (room): {{ event.room }}</p>
+                    <p>Description: {{ event.description }}<br></p>
+                </li>
+            {% endfor %}
+        </ul>   
+    </div>
 </body>
 </html>

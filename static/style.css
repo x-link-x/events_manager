@@ -1,0 +1,62 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding: 0px;
+    
+}
+
+body > header {
+    width:100%;
+    background-color: black;
+    color: white;
+    height:100px;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body > header > nav > h1 {
+    position: relative;
+    top: 10px;
+}
+
+body > header > nav > ul > li {
+    position: relative;
+    top: 20px;
+    list-style: none;
+    display: inline; 
+}
+
+
+body > header > nav > ul > li > a {
+    text-decoration: none;
+    color:white;
+    padding: 5px; 
+}
+
+#main-page {
+    padding:20px;
+
+}
+
+#create-form {
+    height:40px;
+}
+
+.event-box {
+    list-style: none;
+    background-color:whitesmoke;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    float:left;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+
+}
+

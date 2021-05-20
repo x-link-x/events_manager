@@ -13,18 +13,19 @@ def events_index():
 
 @app.route('/events', methods=['POST'])
 def add_event():
-    event_date = request.form['date']
+    event_date = request.form['start_date']
     event_name = request.form['name']
     event_num_of_guests = request.form['num_of_guests']
     event_room = request.form['room']
     event_description = request.form['description']
     event_recurring = request.form['recurring']
-     # Create a new event object with the events posted from form
-    new_event = Event(event_date, event_name, event_num_of_guests, event_room, event_description)
-    # Append event to the list (you could do this directly here, but we put it in the event_planner file)
+  
+    new_event = Event(event_name, event_num_of_guests, event_room, event_description, event_date)
+
     add_new_event(new_event)
     if event_recurring == "on":
-        new_event.description += "\nThis is a recurring event"
+        new_event.description += ". This is a recurring event"
+        
     return render_template('index.html', title='Home', my_events=events)
 
 # @app.route('/events/delete')
@@ -35,7 +36,7 @@ def add_event():
 # def delete_event():
 #     delete_name = request.form['delete_name']
 #     for event in events:
-        # if delete_name == event.name:
-            # delete_existing_event(delete_name)
+#         if delete_name == event.name:
+#             delete_existing_event(delete_name)
 #     return render_template('index.html', title='Home', my_events=events)
     

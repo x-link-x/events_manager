@@ -2,30 +2,30 @@
 
 {% block content %}
     
-    <h1>Events Manager</h1>
-    
-    <form action="/events" method="post"> 
+    <form action="/events" method="post" id="create-form"> 
         
-      <label for="date">Date</label>
-      <input type="text" name="date" id="date">
+      <label for="start_date">Date:</label>
+      <input type="date" id="start_date" name="start_date"
+       value="2021-01-01"
+       min="2021-05-20" max="2023-12-31">
 
-      <label for="name">Name</label>
+      <label for="name">Name:</label>
       <input type="text" name="name" id="name">
 
       <label for="recurring">Recurring?</label>
       <input type="checkbox" name="recurring" id="recurring">
 
-      <label for="num_of_guests">Number of Guests</label>
+      <label for="num_of_guests">Number of Guests:</label>
       <input name="num_of_guests" id="num_of_guests"></input>
 
-      <label for="room">Room Location</label>
+      <label for="room">Room Location:</label>
       <input name="room" id="room"></input>
 
-      <label for="description">Description</label>
+      <label for="description">Description:</label>
       <input name="description" id="description"></input>
 
       <input type="submit" value="Add Event" id="submit-button">
     </form>
-    
+    <hr>
        
 {% endblock content %}
