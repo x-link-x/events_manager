@@ -10,8 +10,8 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/events"></a>Home</li>
-            <!-- remove event -->
+            <li><a href="/events">Home</a></li>
+            <li><a href="/events/delete">Delete an event</a></li>
         </ul>
     </nav>
 
@@ -26,6 +26,18 @@
                 {{ event.num_of_guests }}
                 {{ event.room }}
                 {{ event.description }}
+                <!-- {% if event.recurring%}
+                    <span>This is a recurring event</span>
+                {% else %}
+                    <span>This is not recurring</span> -->
+
+                {% endif %}
+                
+                
+                    
+                
+                    
+                
 
                 <!-- {% if event.recurring %}
                     <span>&#9989;</span>

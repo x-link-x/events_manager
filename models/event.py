@@ -8,3 +8,4 @@ class Event():
         self.room = room
         self.description = description
         
+        

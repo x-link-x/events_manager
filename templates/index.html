@@ -6,23 +6,26 @@
     
     <form action="/events" method="post"> 
         
-        <label for="date">Date</label>
-        <input type="text" name="date" id="date">
+      <label for="date">Date</label>
+      <input type="text" name="date" id="date">
 
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name">
 
-        <label for="num_of_guests">Number of Guests</label>
-        <input name="num_of_guests" id="num_of_guests"></input>
+      <label for="recurring">Recurring?</label>
+      <input type="checkbox" name="recurring" id="recurring">
 
-        <label for="room">Room Location</label>
-        <input name="room" id="room"></input>
+      <label for="num_of_guests">Number of Guests</label>
+      <input name="num_of_guests" id="num_of_guests"></input>
 
-        <label for="description">Description</label>
-        <input name="description" id="description"></input>
+      <label for="room">Room Location</label>
+      <input name="room" id="room"></input>
 
-        <input type="submit" value="Add Event" id="submit-button">
-      </form>
+      <label for="description">Description</label>
+      <input name="description" id="description"></input>
+
+      <input type="submit" value="Add Event" id="submit-button">
+    </form>
     
        
 {% endblock content %}
