@@ -9,5 +9,6 @@ def add_new_event(event):
 
 def delete_existing_event(event):
     events.pop(event)
+    
 
 

@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h3>Enter an event to delete:</h3>
-<form action="/events" method="post"> 
-    <label for="name">Name</label>
-    <input type="text" name="delete_name" id="delete_name">
-    
-    <input type="submit" value="Delete Task">
-</form>
+<div id="delete-form">
+    <h4>Enter an event to delete:</h4>
+    <form action="/events" method="post"> 
+        <label for="name"></label>
+        <input type="text" name="delete_name" id="delete_name">
+        
+        <input type="submit" value="Delete Event">
+    </form>
+</div>
+<hr>
     
 {% endblock content %}
