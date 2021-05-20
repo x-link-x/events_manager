@@ -21,6 +21,7 @@
     <ul>
         {% for event in my_events %} 
             <li>
+                {{ event.date }}
                 {{ event.name }} 
                 {{ event.num_of_guests }}
                 {{ event.room }}
@@ -28,7 +29,7 @@
 
                 <!-- {% if event.recurring %}
                     <span>&#9989;</span>
-                    do something - display checkbox ticken (returns on)
+                    do something - display checkbox ticked (returns on)
                 {% endif %} --> 
             </li>
         {% endfor %}
