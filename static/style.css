@@ -30,7 +30,6 @@ body > header > nav > ul > li {
     display: inline; 
 }
 
-
 body > header > nav > ul > li > a {
     text-decoration: none;
     color:white;
@@ -56,9 +55,3 @@ body > header > nav > ul > li > a {
     border-radius: 10px;
     border: 1px solid lightgrey;
 }
-
-#delete-form {
-    position:relative;
-    top: -20px;
-}
-
