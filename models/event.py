@@ -7,6 +7,4 @@ class Event():
         self.description = description
         self.start_date = start_date
         self.recurring = False
-        
-        
-        
+         

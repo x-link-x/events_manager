@@ -30,7 +30,8 @@
                     <h3>{{ event.name }}</h3>
                     <p>Number attending: {{ event.num_of_guests }}</p>
                     <p>Location (room): {{ event.room }}</p>
-                    <p>Description: {{ event.description }}<br></p>
+                    <p>Description: {{ event.description }}</p>
+                    <h4>{{ my_events.index(event) + 1 }}</h4>
                 </li>
             {% endfor %}
         </ul>   

@@ -7,12 +7,3 @@ events = [event_1, event_2]
 def add_new_event(event):
     events.append(event)
     
-
-
-# def get_event_index(event_name):
-#     return events.index(event_name)
-
-# def delete_existing_event(index):
-#     events.pop(index)
-
-

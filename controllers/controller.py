@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, url_for, redirect
 from app import app
 from models.event_planner import events, add_new_event
 from models.event import Event
@@ -26,7 +26,6 @@ def add_event():
         if event_recurring == "on":
             new_event.description += ". This is a recurring event" 
         return render_template('index.html', title='Home', my_events=events)
-
     except:
         return render_template('index.html', title='Home', my_events=events)
 
@@ -34,18 +33,7 @@ def add_event():
 def delete_page():
     return render_template('delete.html', title="Delete an event", my_events=events)
 
-@app.route('/events/delete/<index>', methods=['GET', 'POST'])
+@app.route('/events/delete/<index>', methods=['GET'])
 def delete_event(index):
-    
-    # delete_name = request.form['name-to-delete']
-    
-    # delete_existing_event(index)
-
-    
-    events.pop(int(index))
-    
-
-    return render_template('index.html', title='Home', my_events=events)
-   
-    
-        
+    events.pop(int(index) - 1)
+    return render_template('index.html', title='Home', my_events=events) 

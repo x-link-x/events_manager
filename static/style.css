@@ -1,8 +1,7 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
     margin: 0 auto;
-    padding: 0px;
-    
+    padding: 0px;  
 }
 
 body > header {
@@ -40,7 +39,6 @@ body > header > nav > ul > li > a {
 
 #main-page {
     padding:20px;
-
 }
 
 #create-form {
@@ -57,7 +55,6 @@ body > header > nav > ul > li > a {
     margin: 20px;
     border-radius: 10px;
     border: 1px solid lightgrey;
-
 }
 
 #delete-form {
