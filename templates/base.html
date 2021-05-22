@@ -13,7 +13,6 @@
             <h1>Events Manager</h1>
             <ul>
                 <li><a href="/events">Home</a></li>
-                <li><a href="/events/delete">Delete an event</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +30,9 @@
                     <p>Number attending: {{ event.num_of_guests }}</p>
                     <p>Location (room): {{ event.room }}</p>
                     <p>Description: {{ event.description }}</p>
-                    <h4>{{ my_events.index(event) + 1 }}</h4>
+                    <form class="form-inline" action="/events/delete/{{ event.name }}" method="POST">
+                        <input type="submit" value="Delete this event">
+                      </form>
                 </li>
             {% endfor %}
         </ul>   

@@ -1,6 +1,6 @@
 from flask import render_template, request, url_for, redirect
 from app import app
-from models.event_planner import events, add_new_event
+from models.event_planner import events, add_new_event, delete_event
 from models.event import Event
 
 @app.route('/')
@@ -29,11 +29,13 @@ def add_event():
     except:
         return render_template('index.html', title='Home', my_events=events)
 
-@app.route('/events/delete')
-def delete_page():
-    return render_template('delete.html', title="Delete an event", my_events=events)
+@app.route('/events/delete/<name>', methods=['POST'])
+def delete(name):
+    delete_event(name)
+    return render_template('index.html', title="Home", my_events=events)
 
-@app.route('/events/delete/<index>', methods=['GET'])
-def delete_event(index):
-    events.pop(int(index) - 1)
-    return render_template('index.html', title='Home', my_events=events) 
+
+# @app.route('/events/delete/<index>', methods=['GET'])
+# def delete_event(index):
+#     events.pop(int(index) - 1)
+#     return render_template('index.html', title='Home', my_events=events) 
